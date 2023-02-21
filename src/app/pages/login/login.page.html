@@ -1,0 +1,50 @@
+<ion-content>
+  <!-- logo -->
+  <ion-row class='logo-container ion-justify-content-center ion-align-items-center'>
+    <ion-img src='../../assets/img/cerradura.png' alt=''></ion-img>
+  </ion-row>
+
+  <!-- logo -->
+  <!-- form login -->
+  <form [formGroup]="loginForm">
+    <ion-row class='input-container ion-justify-content-center ion-align-items-center'>
+      <ion-item lines='none' class='ipt'>
+        <ion-input formControlName="email"  placeholder='Email'></ion-input>
+        <ion-icon name='person' slot='start'></ion-icon>
+      </ion-item>
+    </ion-row>
+   <ion-row class='input-container ion-justify-content-center ion-align-items-center'>
+      <ion-item lines='none' class='ipt'>
+        <ion-input formControlName="password" type='password' placeholder='Pass* * * * * *'></ion-input>
+        <ion-icon name='lock-closed' slot='start'></ion-icon>
+      </ion-item>
+    </ion-row>
+    <!-- button login -->
+    <ion-row class='input-container ion-justify-content-center ion-align-items-center'>
+      <ion-button (click)='login()' class='ion-text-uppercase' fill="outline" shape="round"><ion-icon size="large" slot="start" name="log-in-outline"></ion-icon>login</ion-button>
+    </ion-row>
+    <!-- button login -->
+    <!-- button register -->
+    <ion-row class='input-container ion-justify-content-center ion-align-items-center'>
+      <ion-button (click)="register()" class='register ion-text-uppercase' shape='round' fill="outline"><ion-icon size="large" slot="start" name="person-add-outline"></ion-icon>
+        Create account
+      </ion-button>
+    </ion-row>
+    <ion-row class='input-container ion-justify-content-center ion-align-items-center'>
+      <ion-button (click)="logout()" fill="outline" shape="round"><ion-icon size="large" slot="start" name="log-out-outline"></ion-icon>logout</ion-button>
+    </ion-row>
+    
+    <ion-grid>
+     
+    <ion-col offset=3><ion-label class='label'> ALOJAMIENTO</ion-label>
+      </ion-col>
+  </ion-grid>
+    <!-- button register -->
+  </form>
+  <!-- form login -->
+  <ion-fab horizontal="end" vertical="bottom" position="fixed" >
+    <ion-fab-button (click)="cerrar()">
+        <ion-icon name="exit"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

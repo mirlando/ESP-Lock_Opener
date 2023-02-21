@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button slot="end" shape="round" color="danger" fill="outline" size="small" (click)="cerrar()">
+        <ion-icon shape="round" name="log-out-outline"></ion-icon>Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary"> Insertar o Actualizar apartamentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-input placeholder="Nombre" [(ngModel)]="descripcion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input placeholder="Dirección" [(ngModel)]="direccion"></ion-input>
+    </ion-item>
+    <ion-item button="true" (click)="sacarFoto()">
+      <img [src]="preview" *ngIf="foto;" />
+      <p *ngIf="!foto">Pulse para introducir foto</p>
+    </ion-item>
+    <ion-item>
+      <ion-select interface="popover" placeholder="Estado del apartamento falso || true" [(ngModel)]="estado">
+        <ion-select-option value="no ocupado">No ocupado</ion-select-option>
+        <ion-select-option value="ocupado">Ocupado</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select interface="popover" placeholder="Seleccione cerradura" [(ngModel)]="idkey">
+        <ion-select-option *ngFor="let documentCerraduras of coleccionCerraduras"
+          value="{{documentCerraduras.id}}">{{documentCerraduras.data.CODIGO}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+     <ion-item>
+      <ion-label position="floating">latitud</ion-label>
+      <ion-input placeholder="Latitud" [(ngModel)]="lat"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Longitud</ion-label>
+      <ion-input placeholder="longitud" [(ngModel)]="lon"></ion-input>
+    </ion-item>
+
+    <ion-button shape="round" disabled="{{!control}}" fill="outline" size="small"
+      (click)="insertar()">Insertar</ion-button>
+    <ion-button shape="round" disabled="{{control}}" fill="outline" size="small"
+      (click)="actualizar()">Actualizar</ion-button>
+  </ion-list>
+</ion-content>

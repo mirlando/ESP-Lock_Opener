@@ -1,0 +1,27 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button slot="end" shape="round" color="danger" fill="outline" size="small" (click)="cerrar()">
+        <ion-icon shape="round" name="log-out-outline"></ion-icon>Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary"> Insertar o Actualizar cerraduras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item disabled="{{control}}">
+      <ion-label position="floating">Estado</ion-label>
+      <ion-input placeholder="Estado" [(ngModel)]="activa"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Código</ion-label>
+      <ion-input placeholder="Entre Código" [(ngModel)]="code"></ion-input>
+    </ion-item>
+    <ion-button shape="round" disabled="{{!control}}" fill="outline" size="small"
+      (click)="insertar()">Insertar</ion-button>
+    <ion-button shape="round" disabled="{{control}}" fill="outline" size="small"
+      (click)="actualizar()">Actualizar</ion-button>
+  </ion-list>
+</ion-content>

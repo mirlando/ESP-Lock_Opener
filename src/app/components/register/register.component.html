@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button slot="end" shape="round" color="danger" fill="outline" size="small" (click)="cerrar()">
+        <ion-icon shape="round" name="log-out-outline"></ion-icon>Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary"> Registrar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- Boton de regreso -->
+  <!-- Boton de regreso -->
+  <!-- logo -->
+  <!--<ion-row class='logo-container ion-justify-content-center ion-align-items-center'> <img style="width: 40%;"
+      src='../../assets/ionic.png' alt='' style="width: 30%;" /> </ion-row> <!-- logo -->
+  <!-- form register -->
+  <form [formGroup]='registerForm'>
+    
+    <ion-row class='input-container ion-justify-content-center ion-align-items-center'> <span
+        class='label-input label-2 ion-text-end'>Email</span>
+      <ion-item class='ipt'>
+        <ion-input formControlName='mail' placeholder='Correo electrónico'></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row class='input-container ion-justify-content-center ion-align-items-center'> <span
+        class='label-input label-3 ion-text-end'>Contraseña</span>
+      <ion-item class='ipt'>
+        <ion-input type='password' formControlName='password' placeholder='* * * * *'></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row class='input-container ion-justify-content-center ion-align-items-center'> <span
+        class='label-input label-4 ion-text-end'>Confirmar Contraseña</span>
+      <ion-item class='ipt'>
+        <ion-input type='password' formControlName='confirm' placeholder=' * * * * *'></ion-input>
+      </ion-item>
+    </ion-row>
+
+    <ion-row class='input-container ion-justify-content-center ion-align-items-center'>
+      <!-- Boton de registro -->
+      <ion-button (click)='register()' class='register ion-text-uppercase' shape='round' expand='block'>Create account
+      </ion-button> <!-- Boton de registro -->
+    </ion-row>
+  </form> <!-- form register -->
+</ion-content>

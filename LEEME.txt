@@ -1,0 +1,18 @@
+ESP-LOCK OPENER V-1.0
+
+Desarrollado en AngularJS y utilizando el framework de Ionic.
+
+Las instalaciones necesarias para poder utilizarlo son:
+
+*NodeJS en su version LTS, indispensable para el resto de instalaciones ---> https://nodejs.org/es/
+
+*Una vez tenemos NodeJS instalamos AngularCLI. ---> En cualquier terminal CMD ejecutamos npm install -g @angular/cli
+
+*De igual manera instalamos Typescript ---> npm install -g @typescript
+
+*Lo mismo para Ionic ---> npm install -g @ionic/cli
+
+Ahora ya podemos ejecutar y editar nuestro programa.
+
+NOTA: Tener en cuenta que el repositorio de GitHub no incluye la carpeta node_modules. Si clonas o descargas el repositorio
+debes ejecutar en un terminal abierto en la ubicacion de la carpeta del proyecto el comando npm install

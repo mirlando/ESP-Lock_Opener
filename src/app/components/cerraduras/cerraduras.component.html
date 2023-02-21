@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button slot="end" shape="round" color="tertiary" fill="outline"  size="small" (click)="insertar()">
+        <ion-icon slot="end" name="create-outline"></ion-icon>Insertar
+      </ion-button>
+      <ion-button slot="end" shape="round" color="danger" fill="outline"  size="small" (click)="cerrar()">
+        <ion-icon shape="round" name="log-out-outline"></ion-icon>Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary"> CRUD Cerraduras</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-list>
+      <ion-item-sliding *ngFor="let documentCerraduras of coleccionCerraduras">
+          <ion-item-options side="start">
+            <ion-item-option color="success" (click)="actualizar(documentCerraduras.data.ACTIVA, documentCerraduras.id, documentCerraduras.data.CODIGO)">
+              <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        <ion-item >
+          <ion-grid>
+            <ion-row>
+              <h2>Estado:  {{documentCerraduras.data.ACTIVA}}</h2>
+            </ion-row>
+            <ion-row>
+              Codigo:  {{documentCerraduras.data.CODIGO}}
+            </ion-row>
+            <ion-row>
+              id:  {{documentCerraduras.id}}
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      <ion-item-options side="end" >
+        <ion-item-option color="danger" (click)="borrar(documentCerraduras.data.ACTIVA, documentCerraduras.id)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      </ion-item-sliding>
+  </ion-list>
+
+  
+</ion-content>

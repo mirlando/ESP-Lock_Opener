@@ -1,0 +1,17 @@
+[
+    {
+        "icon": "home-sharp",
+        "name": "Inicio",
+        "redirectTo": "/tabs"
+    },
+    {
+        "icon": "settings-sharp",
+        "name": "Configuración",
+        "redirectTo": "/settings"
+    },
+    {
+        "icon": "help-circle-sharp",
+        "name": "Ayuda",
+        "redirectTo": "/info"
+    }
+]

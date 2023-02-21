@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button slot="end" shape="round" color="danger" fill="outline"  size="small" (click)="cerrar()">
+        <ion-icon name="log-out-outline">Cambiar Rol</ion-icon>Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">Control Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-list>
+      <ion-item-sliding *ngFor="let item of coleccionUsuarios">
+          <ion-item-options side="start">
+            <ion-item-option color="success" (click)="cambiarRol(item.id)">Cambiar Rol
+              <ion-icon slot="start" name="create-outline"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        <ion-item >
+          <ion-grid>
+            <ion-row>
+              <h2>USUARIO:  {{item.data.EMAIL}}</h2>
+            </ion-row>
+            <ion-row>
+              ROL  {{item.data.ROL}}
+            </ion-row>
+            <ion-row>
+              UID:  {{item.data.UID}}
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      <ion-item-options side="end" >
+        <ion-item-option color="danger" (click)="borrarUsuario(item.id, item.data.UID)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      </ion-item-sliding>
+  </ion-list>
+
+  
+</ion-content>

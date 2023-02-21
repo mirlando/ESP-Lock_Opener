@@ -1,0 +1,35 @@
+<app-header-tabs titulo="Inicio"></app-header-tabs>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+
+      <ion-item lines="none" *ngFor="let item of coleccionApartamentos">
+    <ion-card>
+      <img [src]="this.img.getImage(item.data.IMG)" />
+      <ion-card-header>
+        <ion-card-title>{{item.data.DESCRIPCION}}</ion-card-title>
+        <ion-card-subtitle>{{item.data.DIRECCION}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-buttons slot="start">
+          <ion-button (click)="reservar(item.id)" [disabled] ='control'>
+            <ion-icon slot="icon-only"size="large"  color="success" name="home-outline"></ion-icon>
+          </ion-button>
+            <ion-button (click)="anular(item.id)" [disabled] ='control'>
+              <ion-icon slot="icon-only"size="large"  color="success" name="trash-bin-outline"></ion-icon>
+            </ion-button>
+          <ion-button (click)="map(item.data.LAT, item.data.LON)">
+            <ion-icon slot="icon-only" color="success" name="map-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+   
+   <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button (click)="nuevoSitio()" [disabled] ='control'>
+      <ion-icon name="key-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
