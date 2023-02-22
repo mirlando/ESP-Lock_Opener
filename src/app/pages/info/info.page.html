@@ -1,11 +1,13 @@
 <app-header titulo="Centro de Ayuda"></app-header>
 
 <ion-content class="ion-padding">
+  <ion-list #lista fixed *ngFor="let ayuda of ayudas | async">
 
-  <h1>H1</h1>
-  <h2>H2</h2>
-  <H3>h3</H3>
-
+    <ion-item button (click)="mostrarAyuda(ayuda.name, ayuda.message)" detail="false" lines="none" mode="ios">
+      <ion-label>{{ayuda.name}}</ion-label>
+      <ion-icon slot="end" name="{{ayuda.icon}}" size="large" color="secondary"></ion-icon>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <ion-footer class="ion-padding" collapse="fade">

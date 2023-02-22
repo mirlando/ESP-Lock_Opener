@@ -3,7 +3,11 @@ export interface menuOpts {
     name: string;
     redirectTo: string;
 }
-
+export interface Ayuda {
+    icon: string;
+    name: string;
+    message: string;
+}
 export interface DaysConfig {
     date: Date; 
     subTitle: string;
